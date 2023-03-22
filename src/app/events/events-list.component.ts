@@ -3,7 +3,6 @@ import { ToastrService } from "../common/toastr.service";
 import { EventService } from "./shared/event.service";
 
 @Component({
-    selector: 'event-list',
     template: `
         <div>
             <h1>Upcoming Angular Events</h1>
@@ -12,7 +11,7 @@ import { EventService } from "./shared/event.service";
                 <div *ngFor="let event of events" class="col-md-5">
                     <event-thumbnail (click) = "handleThumbnailClick(event.name)" [event] = "event"></event-thumbnail>
                 </div>
-            </div>>
+            </div>
         </div>
     `
 })
