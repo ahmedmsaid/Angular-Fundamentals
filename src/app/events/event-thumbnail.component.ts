@@ -1,4 +1,5 @@
 import { Component, Input } from "@angular/core";
+import { IEvent } from "./shared/event.model";
 
 @Component({
     selector: 'event-thumbnail',
@@ -14,9 +15,9 @@ import { Component, Input } from "@angular/core";
         </div>
         <div>Price: \${{event.price}}</div>
         <div>
-        <span>Location: {{event.location.address}}</span>
+        <span>Location: {{event.location?.address}}</span>
         <span>&nbsp;</span>
-        <span>{{event.location.city}}, {{event.location.country}}</span>
+        <span>{{event.location?.city}}, {{event.location?.country}}</span>
         </div>
     </div>`,
     styles:[`
@@ -27,5 +28,6 @@ import { Component, Input } from "@angular/core";
 })
 
 export class EventThumbnailComponent{
-    @Input() event: any
+    @Input()
+    event!: IEvent;
 }
