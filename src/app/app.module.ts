@@ -13,6 +13,8 @@ import { CreateEventComponent } from './events/create-event.components';
 import { Error404Component } from './errors/404.component';
 import { EventRouteActivator } from './events/event-details/event-route-activator.service';
 import { AuthService } from './user/auth.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditEventComponent } from './events/edit-event.component';
 
 @NgModule({
   declarations: [
@@ -21,11 +23,14 @@ import { AuthService } from './user/auth.service';
     EventThumbnailComponent,
     EventDetailsComponent,
     CreateEventComponent,
+    EditEventComponent,
     Error404Component,
     NavBarComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
