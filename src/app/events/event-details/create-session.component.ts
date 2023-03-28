@@ -28,7 +28,7 @@ export class CreateSessionComponent {
         this.presenter = new FormControl('', Validators.required)
         this.duration = new FormControl('', Validators.required)
         this.level = new FormControl('', Validators.required)
-        this.abstract = new FormControl('', [Validators.required, Validators.maxLength(400)])
+        this.abstract = new FormControl('', [Validators.required, Validators.maxLength(400), this.restrictedwords(['a7a', '3el2', 'fck', 'fuck'])])
 
         this.newSessionForm = new FormGroup({
             name: this.name,
@@ -37,6 +37,20 @@ export class CreateSessionComponent {
             level: this.level,
             abstract: this.abstract
         })
+    }
+
+    private restrictedwords(words: any){
+        return (control: FormControl): {[key: string]: any} => {
+            if (!words) return null!
+
+            var invalidWords = words
+            .map((w: any) => control.value.includes(w) ? w : null)
+            .filter((w: any) => w != null)
+
+            return invalidWords && invalidWords.length > 0
+            ? {'restrictedWords': invalidWords.join('و ')}
+            : null!
+        }
     }
 
     saveSession(formValues: any){
