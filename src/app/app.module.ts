@@ -16,6 +16,7 @@ import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditEventComponent } from './events/edit-event.component';
 import { CreateSessionComponent } from './events/event-details/create-session.component';
+import { SessionsListComponent } from './events/event-details/sessions-list.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { CreateSessionComponent } from './events/event-details/create-session.co
     EventDetailsComponent,
     CreateEventComponent,
     CreateSessionComponent,
+    SessionsListComponent,
     EditEventComponent,
     Error404Component,
     NavBarComponent

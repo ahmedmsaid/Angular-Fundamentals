@@ -21,5 +21,20 @@
         </address>
       </div>
     </div>
-    <button [routerLink]="['/events/edit/', event.id]" type="submit" class="btn btn-primary">Edit Event</button>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-md-2">
+        <h3 style="margin: 0;">Sessions</h3>
+      </div>
+      <div class="col-md-2">
+        <a (click)="addSession()">Add Session</a>
+      </div>
+    </div>
+
+    <sessions-list *ngIf="!addMode" [sessions] = "event.sessions"></sessions-list>
+    <create-session *ngIf="addMode" (saveNewSession)="saveNewSession($event)" (cancelAddSession)="cancelAddSession()" ></create-session>
+
+    <button *ngIf="!addMode" [routerLink]="['/events/edit/', event.id]" type="submit" class="btn btn-primary">Edit Event</button>
   </div>
