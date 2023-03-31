@@ -17,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditEventComponent } from './events/edit-event.component';
 import { CreateSessionComponent } from './events/event-details/create-session.component';
 import { SessionsListComponent } from './events/event-details/sessions-list.component';
+import { CollapsibleListComponent } from './common/collapsible-well.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SessionsListComponent } from './events/event-details/sessions-list.comp
     SessionsListComponent,
     EditEventComponent,
     Error404Component,
+    CollapsibleListComponent,
     NavBarComponent
   ],
   imports: [
