@@ -14,7 +14,7 @@ import { Component, Input } from "@angular/core";
 
 export class CollapsibleListComponent {
     @Input() title!: string
-    visibile: boolean = false
+    visibile: boolean = true
 
     toggleVisibility() {
         this.visibile = !this.visibile

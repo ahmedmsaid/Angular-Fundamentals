@@ -18,6 +18,7 @@ import { EditEventComponent } from './events/edit-event.component';
 import { CreateSessionComponent } from './events/event-details/create-session.component';
 import { SessionsListComponent } from './events/event-details/sessions-list.component';
 import { CollapsibleListComponent } from './common/collapsible-well.component';
+import { DurationPipe } from './events/shared/duration.pipe';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { CollapsibleListComponent } from './common/collapsible-well.component';
     EditEventComponent,
     Error404Component,
     CollapsibleListComponent,
-    NavBarComponent
+    NavBarComponent,
+    DurationPipe
   ],
   imports: [
     BrowserModule,
