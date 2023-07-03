@@ -17,7 +17,7 @@ export class AuthService {
         this.currentUser.firstName = firstName
         this.currentUser.lastName = lastName
     }
-    isAuthenticated() {
+    isAuthenticated():boolean {
         return !!this.currentUser
     }
 }

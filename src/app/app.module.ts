@@ -22,6 +22,9 @@ import { DurationPipe } from './events/shared/duration.pipe';
 import { jQ_TOKEN } from './common/jQuery.service';
 import { SimpleModalCompnent } from './common/simple-modal.component';
 import { ModalTriggerDirective } from './common/modal-trigger-directive';
+import { UpVoteComponent } from './events/event-details/upvote.component';
+import { VoterService } from './events/event-details/voter.service';
+import { LocationValidator } from './events/event-details/validate-location.directive';
 
 declare let toastr: Toastr
 declare let jQuery: any
@@ -40,7 +43,9 @@ declare let jQuery: any
     CollapsibleListComponent,
     SimpleModalCompnent,
     NavBarComponent,
+    UpVoteComponent,
     ModalTriggerDirective,
+    LocationValidator,
     DurationPipe
   ],
   imports: [
@@ -61,6 +66,7 @@ declare let jQuery: any
     },
     EventRouteActivator,
     AuthService,
+    VoterService,
     { 
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtyState
