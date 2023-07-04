@@ -1,6 +1,8 @@
 import { Component } from "@angular/core";
 import { EventService } from "./shared/event.service";
 import { IEvent } from "./shared/event.model";
+import { Observable } from "rxjs";
+import { ActivatedRoute, Route } from "@angular/router";
 
 @Component({
     template: `
@@ -17,11 +19,11 @@ import { IEvent } from "./shared/event.model";
 })
 
 export class EventListComponent {
-    events: IEvent[] = []
+    events!: IEvent[]
 
-    constructor (private eventService: EventService) {}
+    constructor (private eventService: EventService, private route: ActivatedRoute) {}
 
     ngOnInit() {
-      this.events = this.eventService.getEvents();
+      this.eventService.getEvents().subscribe(events => {this.events = events})
     }
 }
