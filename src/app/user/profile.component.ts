@@ -40,7 +40,15 @@ export class ProfileComponent {
 
     saveProfile(formValues: any) {
       this.auth.updateCurrentUser(formValues.firstName, formValues.lastName)
-      this.toastr.success('profile saved');
+        .subscribe(() => {
+          this.toastr.success('profile saved');
+      })
+    }
+
+    logout() {
+      this.auth.logout().subscribe(() => {
+        this.router.navigate(['/user/login'])
+      })
     }
 
     cancel() {
